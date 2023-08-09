@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Ike Moore">
+	<main>
+
+		<h1 class="text-accent text-6xl font-bold m-8">Ike Moore</h1>
+		<div class="flex flex-row justify-center m-8">
+
+			<a class="mx-2" href="https://github.com/ikeia"><i class="fa-brands fa-github fa-2xl hover:opacity-50"></i></a>
+
+			<a class="mx-2" href="https://www.linkedin.com/in/ike-moore-580b4b250/"><i class="fa-brands fa-linkedin fa-2xl hover:opacity-50"></i></a>
+
+			<a class="mx-2" href="https://ikeia.itch.io/"><i class="fa-brands fa-itch-io fa-2xl hover:opacity-50"></i></a>
+
+		</div>
+
+		<div class="divider mb-8 font-bold text-secondary text-3xl">Projects</div> 
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://azhu.itch.io/adrenarun"
+				title="Adrenarun"
+				body="3D FPS roguelike."
+				image="Adrena.png"
+				tags={["Roguelike","3D", "FPS", "Unity"]}
+			/>
+			
+			<Card
+				href="https://jo3moore.itch.io/emb"
+				title="Embryote"
+				body="Turn based card based roguelike for TOjam 2023."
+				image="Emb.png"
+				tags={["Roguelike","Card Game", "Godot"]}
+			/>
+			<Card
+				href="https://ikeia.itch.io/raticus"
+				title="Raticus"
+				body="2D action arena roguelike."
+				image="Rat.png"
+				tags={["Roguelike","Rat", "Godot"]}
+			/>
+			<Card
+				href="https://ikeia.itch.io/crash-landing"
+				title="Crash Landing"
+				body="2D puzzle platformer "
+				image="Crash.png"
+				tags= {["Platformer","Puzzle", "Godot"]}
+			/>
+			<Card
+				href="https://ikeia.itch.io/astrocleaner"
+				title="AstroCleaner"
+				body="Turn based puzzle "
+				image="AstroCleaner.png"
+				tags= {["Turn-Based","Puzzle", "Godot"]}
+			/>
+			<Card
+				href="https://notaloli39.itch.io/continuum"
+				title="Continuum"
+				body="Point and click time loop puzzle"
+				image="Cont.png"
+				tags= {["Point and Click","Puzzle", "Twine"]}
+			/>
+			<Card
+				href="https://worldmapgame.netlify.app/"
+				title="Worldwide Delivery"
+				body="Delivering packages to random countries."
+				image="Map.png"
+				tags= {["Geography","Trivia", "P5.js"]}
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>
