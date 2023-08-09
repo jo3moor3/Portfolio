@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Ike Moore">
+<Layout title="Joe Moore">
 	<main>
 
-		<h1 class="text-accent text-6xl font-bold m-8">Ike Moore</h1>
+		<h1 class="text-accent text-6xl font-bold m-8" style="color:">Joe Moore</h1>
 		<div class="flex flex-row justify-center m-8">
 
 			<a class="mx-2" href="https://github.com/ikeia"><i class="fa-brands fa-github fa-2xl hover:opacity-50"></i></a>
@@ -17,44 +17,44 @@ import Card from '../components/Card.astro';
 
 		</div>
 
-		<div class="divider mb-8 font-bold text-secondary text-3xl">Projects</div> 
+		<div class="divider mb-8 font-bold text-secondary text-3xl">Visual Effects</div> 
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://azhu.itch.io/adrenarun"
-				title="Adrenarun"
-				body="3D FPS roguelike."
-				image="Adrena.png"
-				tags={["Roguelike","3D", "FPS", "Unity"]}
+				href="https://azhu.itch.io/adrenarun"  
+				title="Particle Simulation"
+				body="3D rat visual for my website."
+				image="ratsim.png"
+				tags={["Houdini","3D Math", "Blender", "ZBrush"]}
 			/>
 			
 			<Card
 				href="https://jo3moore.itch.io/emb"
 				title="Embryote"
-				body="Turn based card based roguelike for TOjam 2023."
+				body="My workflow making a game for TOJam 2023."
 				image="Emb.png"
-				tags={["Roguelike","Card Game", "Godot"]}
+				tags={["Blender","Houdini", "Godot","OpenToonz"]}
 			/>
-			<Card
-				href="https://ikeia.itch.io/raticus"
-				title="Raticus"
-				body="2D action arena roguelike."
-				image="Rat.png"
-				tags={["Roguelike","Rat", "Godot"]}
-			/>
+		</ul>
+		<div class="divider mb-8 font-bold text-secondary text-3xl">Scripting</div> 
+		<ul role="list" class="link-card-grid">
+
 			<Card
 				href="https://ikeia.itch.io/crash-landing"
-				title="Crash Landing"
-				body="2D puzzle platformer "
-				image="Crash.png"
-				tags= {["Platformer","Puzzle", "Godot"]}
+				title="Geospatial Visualization"
+				body="Toronto bike collisions visualized "
+				image="Georender.png"
+				tags= {["Python","Blender"]}
 			/>
 			<Card
 				href="https://ikeia.itch.io/astrocleaner"
-				title="AstroCleaner"
-				body="Turn based puzzle "
+				title="Tasty Tech"
+				body="Making a computer vision data set "
 				image="AstroCleaner.png"
-				tags= {["Turn-Based","Puzzle", "Godot"]}
+				tags= {["Python","Blender", "Rigging"]}
 			/>
+		</ul>
+		<div class="divider mb-8 font-bold text-secondary text-3xl">Games</div> 
+		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://notaloli39.itch.io/continuum"
 				title="Continuum"
@@ -63,12 +63,26 @@ import Card from '../components/Card.astro';
 				tags= {["Point and Click","Puzzle", "Twine"]}
 			/>
 			<Card
-				href="https://worldmapgame.netlify.app/"
-				title="Worldwide Delivery"
-				body="Delivering packages to random countries."
-				image="Map.png"
-				tags= {["Geography","Trivia", "P5.js"]}
+			href="https://ikeia.itch.io/raticus"
+			title="Raticus"
+			body="2D action arena roguelike."
+			image="Rat.png"
+			tags={["Roguelike","Rat", "Godot"]}
 			/>
+			<Card
+			href="https://azhu.itch.io/adrenarun"
+			title="AdrenaRun"
+			body="3D FPS roguelike."
+			image="Adrena.png"
+			tags={["Roguelike","3D", "FPS", "Unity"]}
+		/>
+		<Card
+		href="https://ikeia.itch.io/astrocleaner"
+		title="AstroCleaner"
+		body="Turn based puzzle "
+		image="AstroCleaner.png"
+		tags= {["Turn-Based","Puzzle", "Godot"]}
+	/>
 		</ul>
 	</main>
 </Layout>
