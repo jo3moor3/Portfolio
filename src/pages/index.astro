@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Carousel from '../components/Carousel.astro';
 ---
 
 
@@ -11,7 +12,6 @@ import Card from '../components/Card.astro';
 
 		<p class="text-center m-0 mb-4"> My name is </p>
 		<div class="content inline">
-		
 			<h1 class="text-shadows inline" >Joe Moore</h1>
 		</div>
 		
@@ -25,6 +25,99 @@ import Card from '../components/Card.astro';
 			<a class="mx-2" href="https://ikeia.itch.io/"><i class="fa-brands fa-itch-io fa-2xl hover:opacity-50"></i></a>
 
 		</div>
+
+
+
+		<Carousel
+		direction={-1}
+		duration={10}
+		amount={6}
+		size="290px"
+		>
+		<div class="slide">
+			<img class="item" src="ratrig.png"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="procedural tentacle.gif"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="ratsim.gif"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="scineck.jpg"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="level_builder.gif"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="cat1.png"></image>
+		</div>
+
+
+		<!-- Copy and paste all slide again under here: -->
+
+		<div class="slide">
+			<img class="item" src="ratrig.png"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="procedural tentacle.gif"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="ratsim.gif"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="scineck.jpg"></image>
+		</div>
+		<div class="slide">
+			<img class="item" src="level_builder.gif"></image>
+		</div> 
+		<div class="slide">
+			<img class="item" src="cat1.png"></image>
+		</div>
+
+		</Carousel>
+
+		<Carousel
+		direction={-1}
+		duration={10}
+		amount={5}
+		size="130px"
+		>
+		<div class="logoslide">
+			<img class="" src="blender.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="zbrush.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="houdini.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="python.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="godot.png"></image>
+		</div>
+
+		<!-- Copy and paste all slide again under here: -->
+
+		<div class="logoslide">
+			<img class="" src="blender.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="zbrush.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="houdini.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="python.png"></image>
+		</div>
+		<div class="logoslide">
+			<img class="" src="godot.png"></image>
+		</div>
+
+		</Carousel>		
 
 		
 
@@ -79,7 +172,7 @@ import Card from '../components/Card.astro';
 				href=""
 				title="Crater Generator"
 				body="Setting up a 3D procedural crater "
-				image="TeethUI.png"
+				image="crater.png"
 				tags= {["Python","Houdini"]}
 			/>
 			<Card
@@ -274,6 +367,37 @@ import Card from '../components/Card.astro';
   align-content: center;
   justify-content: center;
 }
+
+.slide{
+		height: 200px;
+		width: 250px;
+		align-items: center;
+		padding: 15px;
+		margin: 0 20px;
+		perspective: 100px;
+		pointer-events:auto;
+		
+ 
+	}
+.logoslide{
+	height: 70px;
+	width: 70px;
+	align-items: center;
+	padding: 1px;
+	margin: 0 30px;
+	perspective: 100px;
+	pointer-events:auto;
+	@apply invert;
+	
+
+}
+
+.item:hover {
+	@apply border;
+}
+
+
+ 
 
 
 </style>

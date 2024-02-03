@@ -1,0 +1,135 @@
+---
+interface Props {
+    direction: number;
+    duration: number;
+    amount: number;
+	size: string;
+}
+ 
+const { direction, duration, amount, size } = Astro.props;
+ 
+---
+ 
+ 
+ 
+ 
+		<div class="slider">
+ 
+ 
+			<div class="slide-track" style={"animation-duration:"+duration.toString()+"s;"}>
+ 
+ 
+            <slot/>
+ 
+			</div></div>
+ 
+ 
+ 
+ 
+ 
+</Layout>
+ 
+ 
+ 
+<style define:vars={{ duration, amount, direction, size}}>
+ 
+	.slide-track{
+		white-space: nowrap;
+		display: flex;
+		animation-name: scroll;
+  		animation-timing-function: linear;
+  		animation-iteration-count: infinite;
+        width: calc(var(--size) * calc(var(--amount)*2));
+ 
+	}
+ 
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100%{
+			transform: translateX(calc(calc(var(--size) * var(--direction)) * var(--amount)));
+		}
+	}
+ 
+	.slider{
+		height: 200px;
+		margin:auto;
+		position:relative;
+		width:90%;
+		display:grid;
+		place-items:center;
+		overflow: hidden;
+ 
+ 
+		pointer-events:none; 
+	}
+ 
+ 
+	.slide{
+		height: 200px;
+		width: 250px;
+		align-items: center;
+		padding: 15px;
+		margin: 0 40px;
+		perspective: 100px;
+	}
+ 
+ 
+ 
+ 
+	.slider::before,
+	.slider::after {
+		background: linear-gradient(to right, rgba(29, 35, 42 ,1) 0%, rgba(29, 35, 42 ,0) 100% );
+		content:'';
+		height: 100%;
+		position: absolute;
+		width: 15%;
+		z-index:2;
+ 
+	}
+ 
+	.slider::before{
+		left: 0;
+		top:0;
+	}
+ 
+	.slider::after{
+		right:0;
+		top:0;
+		transform: rotateZ(180deg);
+	}
+ 
+	.slide-item{
+		height: 200;
+		width: 250px;
+		transition: tranform 1s;
+		margin-left: 100px;
+		margin-right: 12px;
+		pointer-events:auto;
+	}
+ 
+    .slide > * {
+        height: 200;
+		width: 250px;
+		transition: tranform 1s;
+		margin-left: 100px;
+		margin-right: 12px;
+		pointer-events:auto;
+    }
+ 
+	.slider:hover .slide-track {
+ 
+		animation-play-state: paused;
+	}
+ 
+	.slide-item:hover{
+		transform: translateZ(20px);
+		z-index:10;
+	}
+ 
+
+ 
+ 
+</style>
+ 
