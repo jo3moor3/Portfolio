@@ -10,25 +10,16 @@ import Layout from '../layouts/Process.astro';
 <img alt="" src="../blender.png"></span><span class="c4 c17">&nbsp; </span><span style="overflow: hidden; display: inline-block; width: 35.00px; height: 32.50px;">
 <img alt="" src="../python.png"></span>
 
-<span class="c4 c17">&nbsp;</span><span class="c4 c15">(Scripting, Geometry Nodes)</span></p><p class="c22"><span class="c3">This project was a small part of a class assignment where I had the choice to present a geospatial visualization in any way I wanted. I chose to use Blender python scripting and geometry nodes to present data about bicycle collisions in Toronto. </span></p>
+<span class="c4 c17">&nbsp;</span><span class="c4 c15">(Scripting, Geometry Nodes)</span></p><p class="c22"><span class="c3"><br>This project was a small part of a class assignment where I had the choice to present a geospatial visualization in any way I wanted. I chose to use Blender python scripting and geometry nodes to present data about bicycle collisions in Toronto. </span></p>
 
 <p class="c16"><span class="c3"></span></p><ol class="c12 lst-kix_vhht72w8263f-0 start" start="1"><li class="c5 li-bullet-0"><span class="c9 c24">Scripting</span></li></ol><p class="c7"><span class="c20 c4">My first task was to write a script for blender to read a csv file, index the data i needed, then connect it to blender geometry node system.</span></p><p class="c7">
     
-<!-- <img alt="" src="imagesG/image1.png" style="width: 493.50px; height: 453.57px;"></span> -->
-
-<!-- <span class="c4"><br>Shown above are the functions I used</span></p> -->
-
-<!-- <p class="c14"><span style="overflow: hidden; display: inline-block; width: 495.00px; height: 859.60px;"><img alt="" src="imagesG/image7.png"></span></p> -->
-
-<p class="c7"><span class="c3"><br>First I got the filename.</span></p><p class="c7"><span class="c3"><br>Then I extracted the latitude, longitude, and severity data from their matching columns on the CSV file.<br>
+<p class="c7"><span class="c3"><br>First I got the filename. Then I extracted the latitude, longitude, and severity data from their matching columns on the CSV file.<br>
     
-<!-- <br>Next I made a geometry node modifier that sets the number of vertices an object has based on an input. I will go over geometry nodes in step 2. This Geo node is saved as a preset that I can apply to any 3D mesh object.<br> -->
 
 <br> I set the number of vertices to be the length of the csv file by referencing one of the columns I had already defined<br>
 
-<br>Since the severity column in the csv file was text data I needed to convert them to numbers. so I made an array to store these new integers and then I also made an array to store the latitude and longitude coordinates as floats.<br>
-
-<br>I stored this data as attributes on the selected object</span></p>
+<br>Since the severity column in the csv file was text data I needed to convert them to numbers. so I made an array to store these new integers and then I also made an array to store the latitude and longitude coordinates as floats.I stored this data as attributes on the selected object.<br></span></p>
 
 
 
@@ -38,39 +29,39 @@ import Layout from '../layouts/Process.astro';
 
 <p class="c7"><span class="c20 c4">Blender has a visual scripting system called geometry nodes that lets people create procedural geometry similar to other more VFX and motion graphics focused software.</span></p>
 
-<p class="c7"><span class="c4 c20">The last thing my script did was apply the geometry node I&#39;m about to go through.</span></p><p class="c14">
-    
-<span style="overflow: hidden; display: inline-block; width: 624.00px; height: 513.33px;">
-    
-<img alt="" src="../geo1.png" style="width: 624.00px; height: 513.33px;"></span></p>
+<p class="c7"><span class="c4 c20">The last thing my script did was apply the geometry node I&#39;m about to go through.</span></p><br>
+
+<p class="c14">    
+<img alt="" src="../geo1.png"></p>
 
 <p class="c16"><span class="c3"></span></p>
 
-<p class="c22"><span class="c3">Pictured above in top down view. Setting each vertex position based on the lat/lon attributes I stored earlier. Then using a bounding box to recenter.
+<p class="c22"><span class="c3">Pictured above in top down view. Setting each vertex position based on the lat/lon attributes I stored earlier. Then using a bounding box to recenter.</span></p><br>
     
-<img alt="" src="../geo2.png" style="width: 671.31px; height: 828.56px; margin-left: -16.83px;"></span></p>
+<img alt="" src="../geo2.png"><br>
 
-<p class="c7"><span class="c3">Next I instanced a curve on each point, applied it, then joined it with a circle. Filling between all the curves creates this triangulated pattern collapsing at the location of the set vertices.</span></p>
+<p class="c7"><span class="c3">Next I instanced a curve on each point, applied it, then joined it with a circle. Filling between all the curves creates this triangulated pattern collapsing at the location of the set vertices.</span></p><br>
 
-<p style="overflow: hidden; display: inline-block; width: 365.00px; height: 175.00px;">
+  
+<img alt="" src="../geo3.png" ><br>
+
+<p class="c7"><span class="c3">Finally I extruded the faces. To do this I need to insert the severity data from earlier, and combine it with a sample of the vertex positions. Using a combination of different techniques I flattened the data a little and made it subtly more varied.</span></p><br>
+
+<p class="c14 c18">
+<img alt="" src="../geo4.png" ></p><br>
+
+<p class="c19"><span class="c4">Finally I applied two procedural modifiers: </span><span class="c24">subdivision surface</span><span class="c4">&nbsp;and </span><span class="c24">remesh</span></p><p class="c16 c18 c23"><span class="c3"></span></p>
     
-<img alt="" src="../geo3.png" style="width: 365.00px; height: 175.00px;"></span></p>
 
-<p class="c7"><span class="c3">Finally I extruded the faces. To do this I need to insert the severity data from earlier, and combine it with a sample of the vertex positions. Using a combination of different techniques I flattened the data a little and made it subtly more varied.</span></p>
-
-<p class="c14 c18"><span style="overflow: hidden; display: inline-block; width: 263.00px; height: 227.00px;">
-    
-<img alt="" src="../geo4.png" style="width: 263.00px; height: 227.00px;"></span></p>
-
-<p class="c19"><span class="c4">Finally I applied two procedural modifiers: </span><span class="c24">subdivision surface</span><span class="c4">&nbsp;and </span><span class="c24">remesh</span></p><p class="c16 c18 c23"><span class="c3"></span></p><p class="c22">
-    
-<span style="overflow: hidden; display: inline-block; width: 595.00px; height: 409.00px;">
-<img alt="" src="../geo5.png" style="width: 595.00px; height: 409.00px;"></span></p>
+<img alt="" src="../geo5.png" class="translate-x-48"><br>
 
 <p class="c19"><span class="c3">Pictured below was my final render. With more time I would&rsquo;ve added color varied materials and a more atmospheric composition.</span></p><hr><p class="c16"><span class="c3"></span></p>
 
-<span style="overflow: hidden; display: inline-block; width: 595.00px; height: 409.00px;">
-<img alt="" src="../geo6.png" style="width: 595.00px; height: 409.00px;"></span></p>
+<img alt="" src="../geo6.png" class="translate-x-16">
+</p>
 </Layout>
+
+
+
 
 <style type="text/css">@import url(https://themes.googleusercontent.com/fonts/css?kit=O9QyY3iLqlytUTLkH8alZggOxvR8yKo05H_rhKGm4YU);ol.lst-kix_vhht72w8263f-8{list-style-type:none}ol.lst-kix_vhht72w8263f-6{list-style-type:none}ol.lst-kix_vhht72w8263f-7{list-style-type:none}.lst-kix_vhht72w8263f-2>li{counter-increment:lst-ctn-kix_vhht72w8263f-2}ol.lst-kix_vhht72w8263f-6.start{counter-reset:lst-ctn-kix_vhht72w8263f-6 0}.lst-kix_vhht72w8263f-0>li:before{content:"" counter(lst-ctn-kix_vhht72w8263f-0,decimal) ".) "}ol.lst-kix_vhht72w8263f-8.start{counter-reset:lst-ctn-kix_vhht72w8263f-8 0}.lst-kix_vhht72w8263f-1>li:before{content:"" counter(lst-ctn-kix_vhht72w8263f-1,lower-latin) ".) "}.lst-kix_vhht72w8263f-3>li:before{content:"(" counter(lst-ctn-kix_vhht72w8263f-3,decimal) ") "}.lst-kix_vhht72w8263f-2>li:before{content:"" counter(lst-ctn-kix_vhht72w8263f-2,lower-roman) ".) "}ol.lst-kix_vhht72w8263f-3.start{counter-reset:lst-ctn-kix_vhht72w8263f-3 0}ol.lst-kix_vhht72w8263f-0{list-style-type:none}ol.lst-kix_vhht72w8263f-1{list-style-type:none}ol.lst-kix_vhht72w8263f-0.start{counter-reset:lst-ctn-kix_vhht72w8263f-0 0}.lst-kix_vhht72w8263f-5>li:before{content:"(" counter(lst-ctn-kix_vhht72w8263f-5,lower-roman) ") "}ol.lst-kix_vhht72w8263f-4{list-style-type:none}ol.lst-kix_vhht72w8263f-5{list-style-type:none}.lst-kix_vhht72w8263f-5>li{counter-increment:lst-ctn-kix_vhht72w8263f-5}.lst-kix_vhht72w8263f-8>li{counter-increment:lst-ctn-kix_vhht72w8263f-8}ol.lst-kix_vhht72w8263f-2{list-style-type:none}ol.lst-kix_vhht72w8263f-3{list-style-type:none}.lst-kix_vhht72w8263f-4>li:before{content:"(" counter(lst-ctn-kix_vhht72w8263f-4,lower-latin) ") "}ol.lst-kix_vhht72w8263f-5.start{counter-reset:lst-ctn-kix_vhht72w8263f-5 0}.lst-kix_vhht72w8263f-6>li:before{content:"" counter(lst-ctn-kix_vhht72w8263f-6,decimal) ". "}.lst-kix_vhht72w8263f-7>li{counter-increment:lst-ctn-kix_vhht72w8263f-7}ol.lst-kix_vhht72w8263f-7.start{counter-reset:lst-ctn-kix_vhht72w8263f-7 0}.lst-kix_vhht72w8263f-7>li:before{content:"" counter(lst-ctn-kix_vhht72w8263f-7,lower-latin) ". "}.lst-kix_vhht72w8263f-1>li{counter-increment:lst-ctn-kix_vhht72w8263f-1}.lst-kix_vhht72w8263f-4>li{counter-increment:lst-ctn-kix_vhht72w8263f-4}li.li-bullet-0:before{margin-left:-18pt;white-space:nowrap;display:inline-block;min-width:18pt}.lst-kix_vhht72w8263f-8>li:before{content:"" counter(lst-ctn-kix_vhht72w8263f-8,lower-roman) ". "}ol.lst-kix_vhht72w8263f-2.start{counter-reset:lst-ctn-kix_vhht72w8263f-2 0}.lst-kix_vhht72w8263f-3>li{counter-increment:lst-ctn-kix_vhht72w8263f-3}.lst-kix_vhht72w8263f-6>li{counter-increment:lst-ctn-kix_vhht72w8263f-6}ol.lst-kix_vhht72w8263f-1.start{counter-reset:lst-ctn-kix_vhht72w8263f-1 0}.lst-kix_vhht72w8263f-0>li{counter-increment:lst-ctn-kix_vhht72w8263f-0}ol.lst-kix_vhht72w8263f-4.start{counter-reset:lst-ctn-kix_vhht72w8263f-4 0}ol{margin:0;padding:0}table td,table th{padding:0}.c10{margin-left:72pt;padding-top:0pt;text-indent:36pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c5{margin-left:36pt;padding-top:0pt;padding-left:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c1{margin-left:36pt;padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left;height:11pt}.c16{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left;height:11pt}.c14{padding-top:0pt;text-indent:36pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c19{margin-left:72pt;padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c7{margin-left:36pt;padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c6{padding-top:12pt;padding-bottom:6pt;line-height:1.0;page-break-after:avoid;orphans:2;widows:2;text-align:left}.c3{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Alegreya";font-style:normal}.c22{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c21{padding-top:12pt;padding-bottom:0pt;line-height:1.0;orphans:2;widows:2;text-align:left}.c13{text-decoration-skip-ink:none;font-family:"Alegreya";-webkit-text-decoration-skip:none;font-weight:700;text-decoration:underline}.c9{color:#000000;text-decoration:none;vertical-align:baseline;font-size:16pt;font-style:normal}.c20{color:#000000;text-decoration:none;vertical-align:baseline;font-size:12pt;font-style:normal}.c8{color:#000000;text-decoration:none;vertical-align:baseline;font-size:20pt;font-style:normal}.c0{font-family:"Alegreya";color:#1155cc;font-weight:700}.c11{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c24{font-weight:700;font-family:"Alegreya"}.c4{font-weight:400;font-family:"Alegreya"}.c2{color:inherit;text-decoration:inherit}.c12{padding:0;margin:0}.c17{font-size:20pt}.c15{font-size:16pt}.c23{text-indent:36pt}.c18{margin-left:108pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style>
