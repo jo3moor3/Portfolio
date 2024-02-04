@@ -46,17 +46,21 @@ import Layout from '../layouts/Process.astro';
 
 <!-- ----------------------EXPLOSION------------------------------ -->
 
-<span class="c7">&nbsp;Explosion</span></li></ol><p class="c4 c12"><span style="overflow: hidden; display: inline-block; width: 624.00px; height: 74.80px;">
-    
-<img alt="" src="../explode.gif" style="width: 624.00px; height: 348.70px; margin-left: -280.00px; margin-top: -130.57px;"></span></p><p class="c4 c12">
-    
-<span class="c15 c13">Using Opentoonz I created a very simple explosion animation. Took about 10 minutes to finish and export a sprite sheet. I made it all black so I could more easily modulate the colors within the game engine.</span></p><p class="c4 c23">
+<span class="c7">&nbsp;Explosion</span></li></ol>
 
-<span style="overflow: hidden; display: inline-block; width: 400.50px; height: 273.65px;">
-<img alt="" src="../explosion.gif" style="width: 400.71px; height: 273.08px; margin-left: -58.40px;"></span>
+<p class="c4 c12"> 
+<img alt="" src="../explode.gif" style="width: 97px; height: 97.5px; "> <br><img src="../gradient.png" class="translate-x-3" > </p>
 
-<p class="c4 c12"><span class="c1"><br>In the Godot engine I took the explosion sprite and instanced it on a 2D particle system. I made the particles emit from the shape of a ring as that was the intended area of effect. </span></p><p class="c4 c12">
 
+<p class="c4 c12">
+<span class="c15 c13">Using Opentoonz I created a very simple explosion animation. Took about 10 minutes to finish and export a sprite sheet. I made it all black so I could more easily modulate the colors within the game engine.</span></p>
+
+<br>
+<img alt="" src="../explosion.gif" style="overflow: hidden; display: inline-block; width: 1020px; height: 480px;" class="translate-x-4">
+
+<p class="c4 c12"><span class="c1"><br>In the Godot engine I took the explosion sprite and instanced it on a 2D particle system. I made the particles emit from the shape of a ring as that was the intended area of effect. </span></p>
+
+<p class="c4 c12">
 <span class="c1">I used a color ramp with constant interpolation as shown to the right to modulate the color of each frame. I then randomized the size, lifetime, position, and rotation of the particles. </span></p><ol class="c2 lst-kix_3fyoz3qnbexa-0" start="3"><li class="c4 c8 li-bullet-0">
  
     
@@ -70,13 +74,12 @@ import Layout from '../layouts/Process.astro';
     
 <br>This consisted of the character slowly floating in the jelly for the idle, and for the hit I wanted the jello to violently deform and jiggle as well as the character itself.<br><br></span>
 
-<span style="overflow: hidden; display: inline-block; width: 600.00px; height: 240.58px;">
+
     
-<img alt="" src="../goohit.gif" style="width: 600.00px; height: 337.51px; margin-left: -174.00px; margin-top: -39.42px;"></span>
+<img alt="" src="../goohit.gif" style="overflow: hidden; display: inline-block; width: 243.00px; height: 246px;" class="-z-index-2">
 
-<span style="overflow: hidden; display: inline-block; width: 600.00px; height: 224.58px;">
 
-<img alt="" src="../gooidle.gif" style="width: 600.00px; height: 337.51px; margin-left: -182.00px; margin-top: -63.42px;"></span><span class="c1"><br></span></li>
+<img alt="" src="../gooidle.gif" style="overflow: hidden; display: inline-block; width: 225.00px; height: 220px; "></span><span class="c1"><br></li>
 
     <!-- <div class="grid auto-rows-auto grid-cols-2 gap-2"></div>
       <img alt="" src="../goohit.gif" style=" display: inline-block; width: 600px; height: 337px; " />
