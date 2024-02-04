@@ -3,7 +3,8 @@ import Layout from '../layouts/Process.astro';
 ---
 
 <Layout>
-<h1 class="c7" id="h.c4zguaknh1oq"><span class="c9">Rat Particles</span><span class="c14">&nbsp;</span><span class="c10">- July 2023 (2 days)</span></h1><p class="c0"><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 35.00px; height: 35.00px;">
+    <div class="text-black">
+<h1 class="c7" id="h.c4zguaknh1oq"><span class="c9">Rat Particles</span><span class="c14">&nbsp;</span><span class="c10">- July 2023 (2 days)</span></h1><p class="c0"><span style="overflow: hidden; display: inline-block; width: 35.00px; height: 35.00px;">
     
 <img alt="" src="../zbrush.png" style="width: 35.00px; height: 35.00px;"></span>
     
@@ -13,16 +14,35 @@ import Layout from '../layouts/Process.astro';
 
 <span class="c11">&nbsp; </span>
 
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 37.34px; height: 34.60px;">
+<span style="overflow: hidden; display: inline-block; width: 37.34px; height: 34.60px;">
     
-<img alt="" src="../blender.png" style="width: 37.34px; height: 34.60px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);" title=""></span>
+<img alt="" src="../blender.png" style="width: 37.34px; height: 34.60px;"></span>
     
 <p class="c0">
 <span style="overflow: hidden; display: inline-block; width: 549.50px; height: 307.99px;">
     
-<img alt="" src="../ratsim.gif" style="width: 549.50px; height: 307.99px;"></span></p>
+<img src="../ratsim.gif" style="width: 549.50px; height: 307.99px;"></span></p>
 
-<ol class="c23 lst-kix_kelsfl3kemx0-0 start" start="1"><li class="c2 li-bullet-0"><span class="c1">&nbsp;ZBrush</span><span class="c8"><br>I sculpted a quick and dirty rat model in ZBrush. No real detail was needed, it just needed to be reminiscent of a rat&rsquo;s form.<br> </span></li><li class="c2 li-bullet-0"><span class="c1">&nbsp;Houdini</span><span class="c8"><br></span><span class="c4">In Houdini I remeshed with tris and added normals to the points. Using the vector cross product of the normals with a predefined direction I added velocity to each particle; This way the particles would move according to the mesh&rsquo;s surface.<br><br>I then subtracted each particle&rsquo;s position by the closest proximity vector on the mesh. This pulls the particles closer to the surface of the mesh. Otherwise they would infinitely fly away due to the previously applied velocity.<br><br>I then instanced boxes onto the particles and made them each create trails of particles behind them that shrunk in size as their lifetime decreased. The colors were simply created by layering patterns of noise each with their own color.<br></span></li><li class="c2 li-bullet-0"><span class="c1">&nbsp;Blender</span><span class="c8"><br>The Houdini data was exported into 3 Alembic files: one each for the</span><span class="c14 c16">&nbsp;particle position</span><span class="c8">, </span><span class="c14 c16">orientation</span><span class="c8">, </span><span class="c14 c16">scaling</span><span class="c8">, and </span><span class="c14 c16">color attributes</span><span class="c4">. I used blender&rsquo;s geometry nodes feature to procedurally connect all this data to recreate the houdini simulation. I did this because there are many tools I am accustomed to with blender. The above render was made in Blender directly after finishing this step. I have yet to add Blender specific effects.</span></li></ol><hr><p class="c5"><span class="c4"></span></p>
+<div class="c23 lst-kix_kelsfl3kemx0-0 start" start="1"><div class="c2 li-bullet-0 mb-48"><span class="c1">&nbsp;ZBrush</span><span class="c8"><br>I starting with sculpting a quick and dirty rat model in ZBrush. </span></div>
+    
+<img src="ratmesh.png" class="object scale-50 object-left -translate-x-48 -translate-y-80 m-0 absolute z-20"><br>
+
+
+<div class="c2 li-bullet-0 "><div class="c1 translate-y-24 mt-2">&nbsp;Houdini</div>
+    
+
+<div class="flex items-center o h-72 object-bottom -translate-y-1">
+<p class="inline c4 max-w-xs text-left c2 -translate-x-12">In Houdini I remeshed with tris and added normals to the points. Using the vector cross product of the normals with a predefined direction I added velocity to each particle; This way the particles would move according to the mesh&rsquo;s surface.</p>
+<div class="-z-1 inline w-auto object-middle -translate-y-10">
+<img src="../crossproduct.gif" class="inline w-full object object-middle" style="height:385px; display:inline;" >
+</div>
+</div>
+
+<div class="z-10 c4">
+I then subtracted each particle&rsquo;s position by the closest proximity vector on the mesh. This pulls the particles closer to the surface of the mesh. Otherwise they would infinitely fly away due to the previously applied velocity.<br><br>I then instanced boxes onto the particles and made them each create trails of particles behind them that shrunk in size as their lifetime decreased. The colors were simply created by layering patterns of noise each with their own color.</div><br></span>
+
+</div><div class="c2 li-bullet-0"><span class="c1">&nbsp;Blender</span><span class="c8"><br>The Houdini data was exported into 3 Alembic files: one each for the</span><span class="c14 c16">&nbsp;particle position</span><span class="c8">, </span><span class="c14 c16">orientation</span><span class="c8">, </span><span class="c14 c16">scaling</span><span class="c8">, and </span><span class="c14 c16">color attributes</span><span class="c4">. I used blender&rsquo;s geometry nodes feature to procedurally connect all this data to recreate the houdini simulation. I did this because there are many tools I am accustomed to with blender. The above render was made in Blender directly after finishing this step. I have yet to add Blender specific effects.</span></div></div><hr><p class="c5"><span class="c4"></span></p>
+</div>
 </Layout>
 
 
